@@ -36,8 +36,7 @@ export type TechnologyCategory =
   | 'backend' 
   | 'database' 
   | 'devtools' 
-  | 'cloud'
-  | 'mobile';
+  ;
 
 export type ProficiencyLevel = 
   | 'beginner' 

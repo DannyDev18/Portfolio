@@ -23,9 +23,7 @@ const SkillsSection: React.FC = () => {
     frontend: 'Frontend',
     backend: 'Backend',
     database: 'Database',
-    devtools: 'Dev Tools',
-    cloud: 'Cloud',
-    mobile: 'Mobile'
+    devtools: 'Dev Tools'
   };
 
   // Filter technologies based on active category

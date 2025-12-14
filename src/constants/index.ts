@@ -16,7 +16,12 @@ import mongodbIcon from '../assets/images/mongo.png';
 import postgresqlIcon from '../assets/images/postgresql.png';
 import gitIcon from '../assets/images/git.png';
 import sqlServerIcon from '../assets/images/sql_server.png';
-import oracleIcon from '../assets/images/oracle.png';
+import juegocelula from '../assets/images/juegocelula.jpg';
+import farmacia from '../assets/images/ProjectoFarmacia.jpg';
+import frontend from '../assets/images/frontend.png';
+import backend from '../assets/images/Backend.png';
+import portafolio from '../assets/images/portafolio.png';
+
 
 // Import project images
 import facturacionImage from '../assets/images/Facturacion.png';
@@ -162,14 +167,7 @@ export const TECHNOLOGIES: Technology[] = [
     proficiency: 'intermediate',
     color: '#CC2927'
   },
-  {
-    id: 'oracle',
-    name: 'Oracle',
-    icon: oracleIcon,
-    category: 'database',
-    proficiency: 'beginner',
-    color: '#F80000'
-  },
+ 
   {
     id: 'git',
     name: 'Git',
@@ -182,30 +180,7 @@ export const TECHNOLOGIES: Technology[] = [
 
 // Projects data
 export const PROJECTS: Project[] = [
-  {
-    id: 'pharmacy-management',
-    title: 'Pharmacy Management System',
-    description: `A comprehensive billing and inventory management solution designed specifically for pharmacies. 
-                  This system streamlines customer management, product tracking, and invoice generation with an 
-                  intuitive Windows Forms interface. Features include real-time inventory updates, customer history 
-                  tracking, automated billing calculations, and detailed reporting capabilities.`,
-    shortDescription: 'Complete pharmacy management solution with billing and inventory features.',
-    image: facturacionImage,
-    tags: ['C#', 'SQL Server', 'Windows Forms', 'Desktop App'],
-    githubUrl: 'https://github.com/daniel-devlp/Gestion-Farmacia',
-    githubLink: 'https://github.com/daniel-devlp/Gestion-Farmacia',
-    featured: true,
-    completedDate: '2024-01',
-    technologies: ['SQL Server', 'C#', 'Windows Forms'],
-    features: [
-      'Real-time inventory management',
-      'Customer billing and invoicing',
-      'Product catalog management',
-      'Sales reporting and analytics',
-      'Customer history tracking',
-      'Automated stock alerts'
-    ]
-  },
+  
   {
     id: 'monkeytype-clone',
     title: 'MonkeyType Clone',
@@ -233,95 +208,98 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    id: 'portfolio-website',
-    title: 'Personal Portfolio Website',
-    description: `A modern, responsive portfolio website built with React and TypeScript. Features a clean design 
-                  with smooth animations, dark/light theme support, and optimized performance. Showcases projects, 
-                  skills, and professional experience with an elegant user interface that adapts to all devices.`,
-    shortDescription: 'Modern React portfolio with animations and responsive design.',
-    image: reactIcon, // Using React icon as placeholder
-    tags: ['React', 'TypeScript', 'CSS3', 'Responsive'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/daniel-devlp/portfolio',
+    id: 'project-final',
+    title: 'Final Project (Backend)',
+    description: `Backend for the final course project in Web Development, implemented with C# and ASP.NET Core. Includes modules for invoicing, payments, product and image management, as well as authentication and role management. Features migrations for key entities and services for validations, logging, and transactional handling.`,
+    shortDescription: 'ASP.NET Core backend with invoicing, payments, and user management.',
+    image: backend,
+    tags: ['C#', 'ASP.NET Core', 'Payments', 'Cloudinary', 'API'],
+    githubUrl: 'https://github.com/DannyDev18/ProjectFinal',
+    githubLink: 'https://github.com/DannyDev18/ProjectFinal',
     featured: true,
-    completedDate: '2024-02',
-    technologies: ['React', 'TypeScript', 'CSS3'],
+    completedDate: '2025-12',
+    technologies: ['C#', 'ASP.NET Core', 'Entity Framework', 'Cloudinary', 'SQL Server'],
     features: [
-      'Responsive design',
-      'Smooth animations',
-      'Modern UI/UX',
-      'TypeScript integration',
-      'Performance optimized',
-      'SEO friendly'
+      'Automated invoicing with endpoints and DTOs',
+      'Payments system with Payment and PaymentMethod entities',
+      'Image management via Cloudinary',
+      'Validation, logging, and transactional handling',
+      'Role management integrated with Identity'
     ]
   },
   {
-    id: 'task-manager',
-    title: 'Task Management App',
-    description: `A comprehensive task management application built with React and ASP.NET Core. Features include 
-                  project organization, team collaboration, deadline tracking, and progress monitoring. The app 
-                  provides an intuitive interface for managing tasks across multiple projects with real-time updates.`,
-    shortDescription: 'Full-stack task management with team collaboration features.',
-    image: aspnetIcon, // Using ASP.NET icon as placeholder
-    tags: ['React', 'ASP.NET Core', 'SQL Server', 'Full-Stack'],
-    githubUrl: 'https://github.com/daniel-devlp/task-manager',
+    id: 'frontend-proyecto-final',
+    title: 'Final Project Frontend',
+    description: `Frontend for the final course project, focused on user experience and typed components. Developed primarily in TypeScript (≈59.5%) and CSS (≈40.3%), designed to consume backend APIs and ensure consistent UI/UX.`,
+    shortDescription: 'TypeScript frontend with typed components and CSS styling.',
+    image: frontend,
+    tags: ['TypeScript', 'CSS', 'Frontend', 'UI'],
+    githubUrl: 'https://github.com/DannyDev18/FrontEndProyectoFinal',
+    githubLink: 'https://github.com/DannyDev18/FrontEndProyectoFinal',
     featured: false,
-    completedDate: '2023-11',
-    technologies: ['React', 'ASP.NET Core', 'SQL Server'],
+    completedDate: '2025-06',
+    technologies: ['TypeScript', 'CSS', 'HTML', 'Framework (configurable)'],
     features: [
-      'Project organization',
-      'Team collaboration',
-      'Deadline tracking',
-      'Progress monitoring',
-      'Real-time updates',
-      'Role-based access'
+      'Typed TypeScript components for consistent UI',
+      'Organized CSS styling with responsive design',
+      'Ready to consume backend APIs',
+      'Structure optimized for maintenance and scalability'
     ]
   },
   {
-    id: 'weather-app',
-    title: 'Weather Dashboard',
-    description: `A beautiful weather application that provides detailed weather information with interactive maps 
-                  and forecasts. Built with React and integrated with multiple weather APIs for accurate data. 
-                  Features include location-based weather, 7-day forecasts, and weather alerts.`,
-    shortDescription: 'Interactive weather dashboard with forecasts and maps.',
-    image: javascriptIcon, // Using JavaScript icon as placeholder
-    tags: ['React', 'APIs', 'Maps', 'Weather'],
-    liveUrl: '#',
-    githubUrl: 'https://github.com/daniel-devlp/weather-app',
-    featured: false,
-    completedDate: '2023-10',
-    technologies: ['React', 'JavaScript', 'CSS3'],
+    id: 'juego-godot',
+    title: 'Godot Game',
+    description: `Collaborator in Game developed in Godot using GDScript, with organized scenes, scripts, and assets. Private repository, 100% GDScript.`,
+    shortDescription: 'Godot game developed in GDScript.',
+    image: juegocelula,
+    tags: ['Godot', 'GDScript', 'Game'],
+    githubUrl: 'https://github.com/Papuxking/JuegoGodot',
+    githubLink: 'https://github.com/Papuxking/JuegoGodot',
+    featured: true,
+    completedDate: '2025-12',
+    technologies: ['Godot', 'GDScript'],
     features: [
-      'Location-based weather',
-      '7-day forecasts',
-      'Interactive maps',
-      'Weather alerts',
-      'Multiple locations',
-      'Mobile responsive'
+      'Game logic implemented in GDScript',
+      'Scenes and assets organized for Godot',
+      'Basic mechanics: player, enemies, and collisions'
     ]
   },
   {
-    id: 'ecommerce-api',
-    title: 'E-commerce API',
-    description: `A robust RESTful API for e-commerce applications built with ASP.NET Core and Entity Framework. 
-                  Includes authentication, product management, order processing, and payment integration. 
-                  Designed with clean architecture principles and comprehensive documentation.`,
-    shortDescription: 'RESTful API for e-commerce with authentication and payments.',
-    image: aspnetIcon, // Using ASP.NET icon as placeholder
-    tags: ['ASP.NET Core', 'API', 'Entity Framework', 'Backend'],
-    githubUrl: 'https://github.com/daniel-devlp/ecommerce-api',
-    featured: false,
-    completedDate: '2023-09',
-    technologies: ['ASP.NET Core', 'SQL Server', 'Entity Framework'],
+    id: 'hospital-management-solution',
+    title: 'Hospital Management Solution',
+    description: `Distributed hospital management system built with ASP.NET Core MVC, designed to connect multiple medical centers through microservices. Private repository; includes controller documentation, DTO creation, and Swagger configuration.`,
+    shortDescription: 'Distributed hospital management',
+    image: farmacia,
+    tags: ['C#', 'ASP.NET Core', 'Microservices', 'Docker', 'Swagger'],
+    githubUrl: 'https://github.com/DannyDev18/Gestion-Farmacia',
+    githubLink: 'https://github.com/DannyDev18/Gestion-Farmacia',
+    featured: true,
+    completedDate: '2025-04',
+    technologies: ['C#', 'ASP.NET Core', 'SQL Server', 'Docker', 'JavaScript'],
     features: [
-      'RESTful API design',
-      'JWT authentication',
-      'Product management',
-      'Order processing',
-      'Payment integration',
-      'Swagger documentation'
+      'Documented controllers and DTOs for CRUD operations',
+      'Swagger/OpenAPI configuration',
+    ]
+  },
+  {
+    id: 'portfolio',
+    title: 'Portfolio',
+    description: `Personal portfolio website to showcase projects, skills, and contact information. Built primarily with TypeScript (≈93%) and optimized for presenting work and linking to repositories.`,
+    shortDescription: 'Personal portfolio showcasing projects and contact info.',
+    image: portafolio,
+    tags: ['TypeScript', 'Web', 'Portfolio'],
+    githubUrl: 'https://github.com/DannyDev18/Portfolio',
+    githubLink: 'https://github.com/DannyDev18/Portfolio',
+    featured: true,
+    completedDate: '2025-11',
+    technologies: ['TypeScript', 'JavaScript', 'CSS', 'HTML'],
+    features: [
+      'Project listings with descriptions and repository links',
+      'Contact section and links to social profiles',
+      'Responsive design with performance focus'
     ]
   }
+  
   // TODO: Add more projects as they are completed
 ];
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useScrollAnimation } from '../../hooks';
 import { PERSONAL_INFO, TECHNOLOGIES } from '../../constants';
 import { Technology } from '../../types';
-
+import profileImage from '../../assets/images/profile1.jpg';
 /**
  * About Page Component
  * 
@@ -47,7 +47,7 @@ const About: React.FC = () => {
     {
       title: 'Database & Cloud',
       skills: TECHNOLOGIES.filter((tech: Technology) => 
-        ['MongoDB', 'PostgreSQL', 'SQL Server', 'Oracle'].includes(tech.name)
+        ['MongoDB', 'PostgreSQL', 'SQL Server'].includes(tech.name)
       )
     },
     {
@@ -62,43 +62,24 @@ const About: React.FC = () => {
   const experiences = [
     {
       title: 'Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2023 - Present',
-      description: 'Developing modern web applications using React, Node.js, and cloud technologies. Led the development of a customer management system that improved efficiency by 40%.',
-      technologies: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'AWS']
-    },
-    {
-      title: 'Frontend Developer',
-      company: 'Digital Agency',
-      period: '2022 - 2023',
-      description: 'Created responsive and interactive user interfaces for various client projects. Specialized in React development and modern CSS frameworks.',
-      technologies: ['React', 'JavaScript', 'CSS3', 'Bootstrap', 'Git']
-    },
-    {
-      title: 'Junior Developer',
-      company: 'StartUp Co.',
-      period: '2021 - 2022',
-      description: 'Started my professional journey developing web applications and learning best practices in software development.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
+      company: 'Universidad Tecnica de Ambato',
+      period: 'Present',
+      description: 'A web application for managing courses at the Technical University of Ambato, designed to efficiently administer academic information, student registration, and course tracking. The project optimizes administrative processes and improves the organization and accessibility of academic data.',
+      technologies: ['React', 'TypeScript', 'Python', 'Sql Server']
     }
+  
   ];
 
   // Education background
   const education = [
     {
-      degree: 'Bachelor in Computer Science',
-      institution: 'Universidad Tecnológica',
-      period: '2019 - 2023',
-      description: 'Focused on software engineering, web development, and database design. Graduated with honors.',
-      achievements: ['Dean\'s List', 'Best Final Project Award', 'Programming Contest Winner']
+      degree: 'Information technology engineer',
+      institution: 'Universidad Tecnica del Ambato',
+      period: '2019 - Actual',
+      description: 'Information Technology Engineer specializing in the design, implementation, and optimization of technological solutions. Experienced in systems development, infrastructure management, and support for digital processes focused on efficiency and innovation.',
+      achievements: ['Certificación en Google Cloud Computing', 'Scrum Foundations Certified Expert (Metodologías Ágiles)']
     },
-    {
-      degree: 'Web Development Bootcamp',
-      institution: 'Code Academy',
-      period: '2020',
-      description: 'Intensive program covering modern web development technologies and frameworks.',
-      achievements: ['Full Stack Certification', 'Top 10% Graduate']
-    }
+
   ];
 
   // Personal interests (commented out as not currently used)
@@ -207,7 +188,7 @@ const About: React.FC = () => {
               <div className="relative animate-float">
                 <div className="relative z-10">
                   <img 
-                    src="/assets/images/profile.png" 
+                    src={profileImage} 
                     alt="Daniel Moyolema" 
                     className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white/10 backdrop-blur-xl"
                   />
@@ -291,7 +272,8 @@ const About: React.FC = () => {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-accent-cyan via-accent-blue to-accent-purple"></div>
+          {/*  <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-gradient-to-b from-accent-cyan via-accent-blue to-accent-purple"></div>
+            */}
             {experiences.map((experience, index) => (
               <div 
                 key={`${experience.company}-${experience.period}`}
@@ -340,11 +322,11 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 place-items-center">
             {education.map((edu, index) => (
               <div 
                 key={`${edu.institution}-${edu.period}`}
-                className="bg-bg-card backdrop-blur-xl border border-border-light rounded-xl p-6 transition-all duration-300 hover:border-accent-cyan/50 hover:-translate-y-1 animate-scale-in"
+                className="w-full max-w-xl bg-bg-card backdrop-blur-xl border border-border-light rounded-xl p-6 transition-all duration-300 hover:border-accent-cyan/50 hover:-translate-y-1 animate-scale-in "
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="space-y-2 mb-4">
