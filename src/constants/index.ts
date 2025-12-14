@@ -24,7 +24,6 @@ import portafolio from '../assets/images/portafolio.png';
 
 
 // Import project images
-import facturacionImage from '../assets/images/Facturacion.png';
 import monketypeImage from '../assets/images/monketype.png';
 
 // WhatsApp configuration
