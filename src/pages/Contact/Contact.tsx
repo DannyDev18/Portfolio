@@ -1,27 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../../hooks';
 import { PERSONAL_INFO, WHATSAPP_CONFIG } from '../../constants';
-
-/**
- * Contact Page Component
- * 
- * Provides multiple ways for visitors to get in touch, including
- * a contact form, social media links, and direct contact information
- * 
- * Features:
- * - Contact form with validation
- * - Social media integration
- * - Professional contact information
- * - Interactive animations
- * - Form submission handling
- * - Response feedback
- * 
- * @author Daniel Moyolema
- * @version 2.0.0
- */
-
-
-
 const Contact: React.FC = () => {
   // Animation refs
   const [headerRef, headerVisible] = useScrollAnimation();
@@ -203,7 +182,7 @@ const Contact: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={PERSONAL_INFO.resume} 
-                  download="Daniel_Moyolema_Resume.pdf"
+                  download="C:\Portfolio\src\assets\documents\CV_Daniel Moyolema.pdf"
                   className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 bg-accent-cyan text-gray-900 font-semibold rounded-xl hover:bg-accent-cyan/90 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-lg hover:shadow-accent-cyan/25"
                 >
                   <span className="text-xl">📥</span>

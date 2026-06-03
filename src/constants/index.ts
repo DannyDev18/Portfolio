@@ -21,11 +21,14 @@ import farmacia from '../assets/images/ProjectoFarmacia.jpg';
 import frontend from '../assets/images/frontend.png';
 import backend from '../assets/images/Backend.png';
 import portafolio from '../assets/images/portafolio.png';
-
-
+import pythonIcon from '../assets/images/python.png';
+import dockerIcon from  '../assets/images/docker.png';
+import fastApiIcon from '../assets/images/fastapiIcon.png'
 // Import project images
 import monketypeImage from '../assets/images/monketype.png';
-
+import grillFrontend from '../assets/images/grill_frontend.png'
+import grillBackend from '../assets/images/backend_grill.jpg'
+import resumePDF from '../assets/documents/CV_Daniel Moyolema.pdf';
 // WhatsApp configuration
 export const WHATSAPP_CONFIG = {
   number: '593988162040',
@@ -59,7 +62,7 @@ export const PERSONAL_INFO = {
   bio: `Passionate full-stack developer with expertise in modern web technologies. 
         I create scalable, user-focused applications using React, .NET, and various databases. 
         Always eager to learn new technologies and solve complex problems.`,
-  resume: '/assets/Daniel_Moyolema_Resume.pdf', // TODO: Add actual resume file to public/assets folder
+    resume: resumePDF,
   social: {
     linkedin: 'https://www.linkedin.com/in/dannydevlp/',
     github: 'https://github.com/daniel-devlp',
@@ -174,7 +177,31 @@ export const TECHNOLOGIES: Technology[] = [
     category: 'devtools',
     proficiency: 'advanced',
     color: '#F05032'
-  }
+  },
+  {
+    id: 'python',
+    name: 'Python',
+    icon: pythonIcon,
+    category: 'backend',
+    proficiency: 'intermediate',
+    color: '#3776AB'
+  },
+  {
+    id: 'docker',
+    name: 'Docker',
+    icon: dockerIcon,
+    category: 'devtools',
+    proficiency: 'intermediate',
+    color: '#F05032'
+  },
+  {
+    id: 'fastapi',
+    name: 'FastAPI',
+    icon: fastApiIcon, 
+    category: 'backend',
+    proficiency: 'intermediate',
+    color: '#009688'
+}
 ];
 
 // Projects data
@@ -208,7 +235,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'project-final',
-    title: 'Final Project (Backend)',
+    title: 'Facturation Project - Backend',
     description: `Backend for the final course project in Web Development, implemented with C# and ASP.NET Core. Includes modules for invoicing, payments, product and image management, as well as authentication and role management. Features migrations for key entities and services for validations, logging, and transactional handling.`,
     shortDescription: 'ASP.NET Core backend with invoicing, payments, and user management.',
     image: backend,
@@ -228,14 +255,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'frontend-proyecto-final',
-    title: 'Final Project Frontend',
+    title: 'Facturation Project - Frontend',
     description: `Frontend for the final course project, focused on user experience and typed components. Developed primarily in TypeScript (≈59.5%) and CSS (≈40.3%), designed to consume backend APIs and ensure consistent UI/UX.`,
     shortDescription: 'TypeScript frontend with typed components and CSS styling.',
     image: frontend,
     tags: ['TypeScript', 'CSS', 'Frontend', 'UI'],
     githubUrl: 'https://github.com/DannyDev18/FrontEndProyectoFinal',
     githubLink: 'https://github.com/DannyDev18/FrontEndProyectoFinal',
-    featured: false,
+    featured: true,
     completedDate: '2025-06',
     technologies: ['TypeScript', 'CSS', 'HTML', 'Framework (configurable)'],
     features: [
@@ -297,7 +324,83 @@ export const PROJECTS: Project[] = [
       'Contact section and links to social profiles',
       'Responsive design with performance focus'
     ]
-  }
+  },
+  {
+    id: 'backendGrill',
+    title: 'Grill API - Backend Restaurant System',
+    description: `API REST robusta para gestión de pedidos de grill/restaurante, construida con FastAPI y PostgreSQL. Arquitectura limpia en capas (Clean Architecture) que separa presentación, dominio e infraestructura. Incluye CRUD de productos con filtros por categoría y disponibilidad, creación de pedidos con múltiples items y cálculo automático de total, cambio de estados (pendiente → procesando → enviado → entregado), borrado lógico (soft delete) en productos y pedidos, e integración con WhatsApp para notificaciones automáticas. Validación de datos con DTOs y Pydantic, logging estructurado, health check, y documentación automática con Swagger UI.`,
+    shortDescription: 'API REST con FastAPI, PostgreSQL y WhatsApp para gestión de pedidos de restaurante.',
+    image: grillBackend, // Imagen del diagrama de arquitectura del backend
+    tags: ['FastAPI', 'Python', 'PostgreSQL', 'REST API', 'Docker'],
+    githubUrl: 'https://github.com/DannyDev18/backend-grill',
+    githubLink: 'https://github.com/DannyDev18/backend-grill',
+    featured: true,
+    completedDate: '2025-12',
+    technologies: [
+        'FastAPI',
+        'Python 3.10+',
+        'PostgreSQL',
+        'SQLAlchemy',
+        'Pydantic',
+        'Uvicorn',
+        'JWT',
+        'Docker',
+        'WhatsApp API',
+        'GitHub Actions'
+    ],
+    features: [
+        'Arquitectura limpia por capas (Clean Architecture)',
+        'CRUD completo de productos con filtros (categoría, disponibilidad)',
+        'Creación de pedidos con múltiples items y cálculo automático de total',
+        'Cambio de estados del pedido (pendiente → procesando → enviado → entregado → cancelado)',
+        'Borrado lógico (soft delete) con campo "activo"',
+        'Integración con WhatsApp: generación de mensaje y link para pedidos',
+        'DTOs con validación Pydantic para entrada/salida',
+        'Documentación automática con Swagger UI (/docs) y ReDoc (/redoc)',
+        'Health check endpoint (/health) y logging estructurado',
+        'Estadísticas de pedidos para administración',
+        'Manejo de errores consistente con códigos HTTP (400, 404, 500)',
+        'Variables de entorno con pydantic-settings',
+        'Preparado para despliegue con Docker'
+    ]
+},
+{
+    id: 'frontendGrill',
+    title: 'Grill UI - Restaurant Ordering Frontend',
+    description: `Interfaz de usuario moderna y responsiva para sistema de pedidos de restaurante, desarrollada con React y TypeScript. UI limpia con Tailwind CSS que incluye grid de productos con imágenes, precios y botón "Agregar al carrito", carrito de compras en tiempo real (useState), formulario de checkout y reserva, filtros por categoría (Entradas, Principales, Postres), y vista previa móvil junto a versión desktop. Consume la API REST del backend Grill para mostrar productos, crear pedidos y generar link de WhatsApp automático para notificar al cliente.`,
+    shortDescription: 'UI moderna para pedidos de restaurante con React, Tailwind CSS y carrito en tiempo real.',
+    image: grillFrontend, // Imagen del mockup UI del frontend
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'UI/UX', 'Responsive'],
+    githubUrl: 'https://github.com/DannyDev18/Frontend-grill',
+    githubLink: 'https://github.com/DannyDev18/Frontend-grill',
+    featured: true,
+    completedDate: '2025-12',
+    technologies: [
+        'React 18',
+        'TypeScript',
+        'Tailwind CSS',
+        'React Hook Form',
+        'Zod',
+        'Axios',
+        'Vite',
+        'ESLint',
+        'Prettier'
+    ],
+    features: [
+        'Grid de productos con imágenes, nombre, precio y botón "Agregar al carrito"',
+        'Carrito de compras en tiempo real con useState (cantidad, total, eliminar items)',
+        'Filtros por categoría: Entradas, Principales, Postres',
+        'Formulario de checkout con validación (React Hook Form + Zod)',
+        'Formulario de reserva (nombre, fecha, hora, comensales)',
+        'Integración con API backend: GET productos, POST pedido',
+        'Generación automática de link de WhatsApp al crear pedido',
+        'Diseño responsivo: vista desktop y vista móvil en una misma pantalla',
+        'Notificaciones de carga y error al consumir API',
+        'Componentes reutilizables (MenuItem, CartItem, CategoryFilter)',
+        'Paleta de colores cálida: terracota, crema, verde oscuro',
+        'Sombras suaves, bordes redondeados y diseño plano moderno'
+    ]
+}
   
   // TODO: Add more projects as they are completed
 ];
